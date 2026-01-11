@@ -11,60 +11,66 @@
 <body>
 
 <header id="header"> <!-- Use box-shadow -->
-    <div id="header_upper-part">
-        <div id="header_upper-left-part">
-            <a class="header_button" id="theme-toggle">
-                <img src="#" alt="" id="" class="header_button-image">
-            </a>
-            <div class="text-tip"></div>
+    <div id="header_upper">
+        <div id="header_upper-left">
+            <div class="header_box-wrapper">
+                <a class="header_box" id="theme-toggle" href="#">
+                    <img src="#" alt="" class="header_box-image">
+                </a>
+                <div class="text-tip"></div>
+            </div>
 
-            <a>
-                <img src="#" alt="">
+            <a id="profile-viewer" href="#">
+                <img src="#" alt="" id="profile-viewer_logo">
             </a>
 
-            <div>
-                <a></a>
-                <span></span>
-                <a></a>
+            <div id="repository-path">
+                <a class="header-text" href="#"></a>
+                <span class="header-text slash"></span>
+                <a class="header-text bold" href="#"></a>
             </div>
         </div>
 
-        <div id="header_upper-right-part">
-            <a>
-                <img src="#" alt="">
-            </a>
-            <div></div>
+        <div id="header_upper-right">
+            <div class="header_box-wrapper">
+                <a class="header_box" id="random-user" href="#">
+                    <img src="#" alt="" class="header_box-image">
+                </a>
+                <div class="text-tip"></div>
+            </div>
 
-            <a>
-                <img src="#" alt="">
-            </a>
-            <div></div>
+            <div class="header_box-wrapper">
+                <a class="header_box" id="more-info" href="#">
+                    <img src="#" alt="" class="header_box-image">
+                </a>
+                <div class="text-tip"></div>
+            </div>
             
-            <div>
-                <img src="#" alt="">
-                <span></span>
+            <div id="header_warning">
+                <img src="#" alt="" class="header_box-image">
+                <span class="header-text warning"></span>
             </div>
 
-            <img src="#" alt="">
+            <img src="#" alt="" id="my-profile_logo">
         </div>
     </div>
 
-    <div id="lower-part">
-        <a> <!-- Use border-bottom -->
-            <img src="#" alt="">
-            <span></span>
+    <nav id="header_lower">
+        <a class="repository-section main-section" href="#"> <!-- Use border-bottom -->
+            <img src="#" alt="" class="header_box-image">
+            <span class="header-text"></span>
         </a>
 
-        <a>
-            <img src="#" alt="">
-            <span></span>
+        <a class="repository-section" href="#">
+            <img src="#" alt="" class="header_box-image">
+            <span class="header-text"></span>
         </a>
 
-        <a>
-            <img src="#" alt="">
-            <span></span>
+        <a class="repository-section" href="#">
+            <img src="#" alt="" class="header_box-image">
+            <span class="header-text"></span>
         </a>
-    </div>
+    </nav>
 </header>
 
 <main>
