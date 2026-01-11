@@ -1,11 +1,33 @@
 :root {
     /* Fonts */
-
-    /* Base Theme */
+    --primary-font: "Mona Sans";
+    --secondary-font: "Hubot Sans";
+    --tertiary-font: "Montserrat";
 
     /* Light Theme */
+    --primary-color: #7E7F95;
+    --secondary-color: #595A6A;
+    --tertiary-color: #383947;
+    --quaternary-color: #28282F;
+    --quinary-color: #1E1E24;
+    --senary-color: #1C1C22;
+
+    --accent-color: #FFF8AA;
+    --accent-color-alt: #ACA771;
+    --accent-color-alt2: #807C55;
+
+    --white-color: #FFFFFF;
+    --white-color_alt: #DFDFDF;
+    --white-color_alt-2: #ECECEC;
+    --gray-color: #A4A4A4;
+
+    --background-color: #131317;
+    --header-background-color: #0B0B0B;
+
+    --language-box-outline-color: #464755;
+    --language-box-background-color: #333440;
 
     /* Dark Theme */
-
-    /* Sizes */
+    /* ... */
 }
+
