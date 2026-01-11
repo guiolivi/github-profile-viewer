@@ -10,4 +10,4 @@ A small project made for the sake of learning about API handling and JavaScript,
 - [ ] Link to the user's profile
 - [ ] Light/Dark mode
 
-Because of the GitHub API's rate limit, you can make up to 5,000 requests per hour.
+Because of the GitHub API's rate limit, you can make up to 60 requests per hour.
