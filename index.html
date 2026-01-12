@@ -8,184 +8,187 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
     <script type="module" src="src/script.js"></script>
     <title>GitHub Profile Viewer</title>
 </head>
 <body>
 
-<header id="header"> <!-- Use box-shadow -->
-    <div id="header_upper">
-        <div class="header_upper-left">
-            <div class="header_box-wrapper">
-                <button type="button" class="header_box" id="theme-toggle">
-                    <img src="#" alt="" class="header_box-image">
-                </button>
-                <div class="text-tip"></div>
+    <header id="header"> <!-- Use box-shadow -->
+        <div id="header_upper">
+            <div class="header_upper-left">
+                <div class="header_box-wrapper">
+                    <button type="button" class="header_box" id="theme-toggle">
+                        <img src="public/sun.svg" alt="" class="header_box-image">
+                    </button>
+                    <div class="text-tip"></div>
+                </div>
+
+                <a id="profile-viewer" href="#">
+                    <img src="public/profile-viewer.png" alt="" id="profile-viewer_logo">
+                </a>
+
+                <div id="repository-path">
+                    <a class="header-text" href="#">guiolivi</a>
+                    <span class="header-text slash">/</span>
+                    <a class="header-text bold" href="#">github-profile-viewer</a>
+                </div>
             </div>
 
-            <a id="profile-viewer" href="#">
-                <img src="#" alt="" id="profile-viewer_logo">
+            <div class="header_upper-right">
+                <div class="header_box-wrapper">
+                    <button type="button" class="header_box" id="random-user">
+                        <img src="public/dice.svg" alt="" class="header_box-image">
+                    </button>
+                    <div class="text-tip"></div>
+                </div>
+
+                <div class="header_box-wrapper">
+                    <button type="button" class="header_box" id="more-info">
+                        <img src="public/info.svg" alt="" class="header_box-image">
+                    </button>
+                    <div class="text-tip"></div>
+                </div>
+
+                <div id="header_warning">
+                    <img src="public/warning.svg" alt="" class="header_box-image">
+                    <span class="header-text warning">Site heavily inspired on GitHub</span>
+                </div>
+
+                <img src="public/profile-picture.png" alt="" id="my-profile_logo">
+            </div>
+        </div>
+
+        <nav id="header_lower">
+            <a class="repository-section main-section" href="#"> <!-- Use border-bottom -->
+                <img src="#" alt="" class="header_box-image">
+                <span class="header-text"></span>
             </a>
 
-            <div id="repository-path">
-                <a class="header-text" href="#"></a>
-                <span class="header-text slash"></span>
-                <a class="header-text bold" href="#"></a>
-            </div>
-        </div>
-
-        <div class="header_upper-right">
-            <div class="header_box-wrapper">
-                <button type="button" class="header_box" id="random-user">
-                    <img src="#" alt="" class="header_box-image">
-                </button>
-                <div class="text-tip"></div>
-            </div>
-
-            <div class="header_box-wrapper">
-                <button type="button" class="header_box" id="more-info">
-                    <img src="#" alt="" class="header_box-image">
-                </button>
-                <div class="text-tip"></div>
-            </div>
-            
-            <div id="header_warning">
+            <a class="repository-section" href="#">
                 <img src="#" alt="" class="header_box-image">
-                <span class="header-text warning"></span>
-            </div>
+                <span class="header-text"></span>
+            </a>
 
-            <img src="#" alt="" id="my-profile_logo">
-        </div>
-    </div>
+            <a class="repository-section" href="#">
+                <img src="#" alt="" class="header_box-image">
+                <span class="header-text"></span>
+            </a>
+        </nav>
+    </header>
 
-    <nav id="header_lower">
-        <a class="repository-section main-section" href="#"> <!-- Use border-bottom -->
-            <img src="#" alt="" class="header_box-image">
-            <span class="header-text"></span>
-        </a>
+    <main id="main">
+        <div id="main-wrapper">
+            <section class="information_panel">
+                <div class="information_upper">
+                    <img src="#" alt="" id="information_profile">
+                    <span id="information_text"></span>
+                    <div class="information_tag"></div>
+                </div>
+                <div class="information_branches-tags">
+                    <div class="information_box" id="current-branch">
+                        <img src="#" alt="" class="information_box-image">
+                        <span class="information_box-text"></span>
+                    </div>
 
-        <a class="repository-section" href="#">
-            <img src="#" alt="" class="header_box-image">
-            <span class="header-text"></span>
-        </a>
+                    <div class="information_box">
+                        <img src="#" alt="" class="information_box-image">
+                        <span class="information_box-text"></span>
+                    </div>
 
-        <a class="repository-section" href="#">
-            <img src="#" alt="" class="header_box-image">
-            <span class="header-text"></span>
-        </a>
-    </nav>
-</header>
-
-<main id="main">
-    <section class="information_panel">
-        <div class="information_upper">
-            <img src="#" alt="" id="information_profile">
-            <span id="information_text"></span>
-            <div class="information_tag"></div>
-        </div>
-        <div class="information_branches-tags">
-            <div class="information_box" id="current-branch">
-                <img src="#" alt="" class="information_box-image">
-                <span class="information_box-text"></span>
-            </div>
-
-            <div class="information_box">
-                <img src="#" alt="" class="information_box-image">
-                <span class="information_box-text"></span>
-            </div>
-
-            <div class="information_box">
-                <img src="#" alt="" class="information_box-image">
-                <span class="information_box-text"></span>
-            </div>
-        </div>
-    </section>
-
-    <label id="search-bar" for="search-input">
-        <img src="#" alt="" id="search-bar_image">
-        <input type="text" id="search-input" placeholder="">
-    </label>
-
-    <section id="result">
-        <div id="loading">
-            <svg id="loading_image"></svg>
-
-            <div id="loading_text"></div>
-        </div>
-
-        <div id="result_info">
-            <div class="result_profile-access">
-                <img src="#" alt="" id="profile-picture">
-                <a id="link-profile" href="#">
-                    <span id="link-text"></span>
-                    <img src="#" alt="" id="link-arrow">
-                </a>
-            </div>
-
-            <div id="result_data">
-                <span id="username"></span>
-
-                <div class="user_name-location">
-                    <span id="user_name"></span>
-
-                    <div id="user_location">
-                        <img src="" alt="" class="user-image">
-                        <span class="user-text location"></span>
+                    <div class="information_box">
+                        <img src="#" alt="" class="information_box-image">
+                        <span class="information_box-text"></span>
                     </div>
                 </div>
+            </section>
 
-                <div id="user_follows">
-                    <img src="#" alt="" class="user-image">
-                    <div class="user_connection"> <!-- Put texts with different styles next or before span, style them by their parent -->
-                        <span id="user_follower-count"></span>
-                    </div>
+            <label id="search-bar" for="search-input">
+                <img src="#" alt="" id="search-bar_image">
+                <input type="text" id="search-input" placeholder="">
+            </label>
 
-                    <div id="user_follower-point"></div>
+            <section id="result">
+                <div id="loading">
+                    <svg id="loading_image"></svg>
 
-                    <div class="user_connection">
-                        <span id="user_following-count"></span>
-                    </div>
+                    <div id="loading_text"></div>
                 </div>
 
-                <div class="user_company-date-repos">
-                    <div class="user_detail">
-                        <img src="#" alt="" class="user-image">
-                        <span id="user_company"></span>
+                <div id="result_info">
+                    <div class="result_profile-access">
+                        <img src="#" alt="" id="profile-picture">
+                        <a id="link-profile" href="#">
+                            <span id="link-text"></span>
+                            <img src="#" alt="" id="link-arrow">
+                        </a>
                     </div>
 
-                    <div class="user_detail">
-                        <img src="#" alt="" class="user-image">
-                        <span id="user_date"></span>
+                    <div id="result_data">
+                        <span id="username"></span>
+
+                        <div class="user_name-location">
+                            <span id="user_name"></span>
+
+                            <div id="user_location">
+                                <img src="" alt="" class="user-image">
+                                <span class="user-text location"></span>
+                            </div>
+                        </div>
+
+                        <div id="user_follows">
+                            <img src="#" alt="" class="user-image">
+                            <div class="user_connection"> <!-- Put texts with different styles next or before span, style them by their parent -->
+                                <span id="user_follower-count"></span>
+                            </div>
+
+                            <div id="user_follower-point"></div>
+
+                            <div class="user_connection">
+                                <span id="user_following-count"></span>
+                            </div>
+                        </div>
+
+                        <div class="user_company-date-repos">
+                            <div class="user_detail">
+                                <img src="#" alt="" class="user-image">
+                                <span id="user_company"></span>
+                            </div>
+
+                            <div class="user_detail">
+                                <img src="#" alt="" class="user-image">
+                                <span id="user_date"></span>
+                            </div>
+
+                            <div class="user_detail">
+                                <img src="#" alt="" class="user-image">
+                                <span id="user_repos-count"></span>
+                            </div>
+                        </div>
+
+                        <div class="information_tag" id="user_status"></div> <!-- Public/Private -->
                     </div>
 
-                    <div class="user_detail">
-                        <img src="#" alt="" class="user-image">
-                        <span id="user_repos-count"></span>
+                    <div class="user_repositories">
+                        <div id="user_repositories-title">
+                            <img src="#" alt="" class="user-image large">
+                            <span id="user_repositories-text"></span>
+                        </div>
+
+                        <div id="repositories">
+                            <a class="repository_box" href="#"> <!-- Repository -->
+                                <div class="repository_title"></div>
+                                <div class="repository_language"></div>
+                                <div class="repository_description"></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-
-                <div class="information_tag" id="user_status"></div> <!-- Public/Private -->
-            </div>
-
-            <div class="user_repositories">
-                <div id="user_repositories-title">
-                    <img src="#" alt="" class="user-image large">
-                    <span id="user_repositories-text"></span>
-                </div>
-
-                <div id="repositories">
-                    <a class="repository_box" href="#"> <!-- Repository -->
-                        <div class="repository_title"></div>
-                        <div class="repository_language"></div>
-                        <div class="repository_description"></div>
-                    </a>
-                </div>
-            </div>
+            </section>
         </div>
-    </section>
-</main>
+    </main>
 
-<footer id="credits"></footer>
+    <footer id="credits">Made by Guilherme 💛</footer>
 
 </body>
 </html>

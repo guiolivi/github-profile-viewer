@@ -1,4 +1,7 @@
 :root {
+    /* Temp */
+    color: white;
+
     /* Fonts */
     --primary-font: "Mona Sans";
     --secondary-font: "Hubot Sans";
@@ -31,3 +34,203 @@
     /* ... */
 }
 
+/* General */
+
+body {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+button {
+    background: inherit;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: inherit;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    border: none;
+    padding: 0;
+    cursor: text;
+    outline: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Header */
+
+/* Header - Divisions */
+
+#header {
+    display: flex;
+    flex-direction: column;
+    height: 10.5vh;
+    background-color: var(--header-background-color);
+    border-bottom: 1px solid var(--tertiary-color);
+}
+
+#header_upper {
+    display: flex;
+    flex-direction: row;
+    height: 45%;
+    padding: 16px;
+}
+
+.header_upper-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    gap: 8px;
+}
+
+.header_upper-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    width: 50%;
+    gap: 8px;
+}
+
+#header_lower {
+    height: 41.5%;
+}
+
+/* Header - Box, Text and Text Tip */
+
+.header_box-wrapper {
+    position: relative;
+    height: 82%;
+    aspect-ratio: 1/1;
+}
+
+.header_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--tertiary-color);
+    border-radius: 10px;
+}
+
+.header_box-image {
+    height: 70%;
+    filter: invert(34%) sepia(6%) saturate(1065%) hue-rotate(199deg) brightness(97%) contrast(87%) ;
+}
+
+.header-text {
+
+}
+
+.text-tip {
+
+}
+
+/* Header - Upper Left */
+
+#theme-toggle {
+
+}
+
+#profile-viewer {
+    height: 100%;
+}
+
+#profile-viewer_logo {
+    height: 100%;
+    filter: invert(100%);
+}
+
+#repository-path {
+
+}
+
+/* Header - Upper Right */
+
+#random-user {
+    height: 100%;
+}
+
+#more-info {
+    height: 100%;
+}
+
+#header_warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 18px;
+    border: 1px solid var(--tertiary-color);
+    border-radius: 10px;
+    height: 82%;
+}
+
+#my-profile_logo {
+    height: 75%;
+    border-radius: 50%;
+}
+
+/* Main */
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 14;
+}
+
+#main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;
+    height: 100%;
+}
+
+.information_panel {
+    height: 14%;
+}
+
+.information_upper {
+    height: 42.5%;
+    border-bottom: 2px solid var(--tertiary-color);
+}
+
+#search-bar {
+    height: 6.25%;
+    background-color: var(--quinary-color);
+}
+
+#search-input {
+    background: none;
+}
+
+/* Result */
+
+#result {
+    display: none;
+    height: 67.5%;
+}
+
+/* Credits */
+
+#credits {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
