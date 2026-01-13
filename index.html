@@ -110,77 +110,78 @@
             </label>
 
             <section id="result">
-                <div id="loading">
-                    <img src="/loading.svg" alt="" id="loading_image">
-                    <div id="loading_text">Carregando...</div>
+                <div class="loading">
+                    <img src="/loading.svg" alt="" class="loading_image">
+                    <div class="loading_text">Carregando...</div>
                 </div>
 
                 <div id="result_info">
-                    <div class="result_profile-access">
-                        <img src="#" alt="" id="profile-picture">
-                        <a id="link-profile" href="#">
-                            <span id="link-text"></span>
-                            <img src="#" alt="" id="link-arrow">
-                        </a>
-                    </div>
-
                     <div id="result_data">
-                        <span id="username"></span>
+                        <div class="result_profile-access">
+                            <img src="https://picsum.photos/500" alt="" id="profile-picture">
+                            <a id="link-profile" href="#">
+                                <span id="link-text">Acessar Perfil</span>
+                                <img src="/seta.svg" alt="" id="link-arrow">
+                            </a>
+                        </div>
 
-                        <div class="user_name-location">
-                            <span id="user_name"></span>
+                        <div class="result_general-info">
+                            <div class="user_name-location">
+                                <span class="result_font-4" id="user_username">@jorge</span>
 
-                            <div id="user_location">
-                                <img src="" alt="" class="user-image">
-                                <span class="user-text location"></span>
+                                <div class="user_name-location-wrapper">
+                                    <span class="result_font-1" id="user_name">Deyvin</span>
+                                    <span class="user_location-wrapper">
+                                        <img src="/location.svg" alt="" class="user_image">
+                                        <span class="result_font-3" id="user_location">Rio de Janeiro, Brazil</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="user_follows">
+                                <img src="/people.svg" alt="" class="user_image">
+                                <div class="user_connection result_font-2"> <!-- Put texts with different styles next or before span, style them by their parent -->
+                                    <span class="result_font-2A" id="user_follower-count">1</span> follower
+                                </div>
+
+                                <div class="user_connection result_font-2">
+                                    <span class="result_font-2A" id="user_following-count">2</span> following
+                                </div>
+                            </div>
+
+                            <div class="user_company-date-repos">
+                                <div class="user_detail">
+                                    <img src="/company.svg" alt="" class="user_image">
+                                    <span id="user_company">Jorge's Entertainment</span>
+                                </div>
+
+                                <div class="user_detail">
+                                    <img src="/date.svg" alt="" class="user_image">
+                                    <span id="user_date">12/05/2025</span>
+                                </div>
+
+                                <div class="user_detail">
+                                    <img src="/repo.svg" alt="" class="user_image">
+                                    <span id="user_repos-count">10</span> repositories
+                                </div>
                             </div>
                         </div>
 
-                        <div id="user_follows">
-                            <img src="#" alt="" class="user-image">
-                            <div class="user_connection"> <!-- Put texts with different styles next or before span, style them by their parent -->
-                                <span id="user_follower-count"></span>
-                            </div>
-
-                            <div id="user_follower-point"></div>
-
-                            <div class="user_connection">
-                                <span id="user_following-count"></span>
-                            </div>
-                        </div>
-
-                        <div class="user_company-date-repos">
-                            <div class="user_detail">
-                                <img src="#" alt="" class="user-image">
-                                <span id="user_company"></span>
-                            </div>
-
-                            <div class="user_detail">
-                                <img src="#" alt="" class="user-image">
-                                <span id="user_date"></span>
-                            </div>
-
-                            <div class="user_detail">
-                                <img src="#" alt="" class="user-image">
-                                <span id="user_repos-count"></span>
-                            </div>
-                        </div>
-
-                        <div class="information_tag" id="user_status"></div> <!-- Public/Private -->
+                        <div class="result_information-tag" id="user_status"></div> <!-- Public/Private -->
                     </div>
 
                     <div class="user_repositories">
-                        <div id="user_repositories-title">
-                            <img src="#" alt="" class="user-image large">
+                        <div class="user_repositories-title">
+                            <img src="/repo.svg" alt="" class="user_image large">
                             <span id="user_repositories-text"></span>
                         </div>
 
-                        <div id="repositories">
-                            <a class="repository_box" href="#"> <!-- Repository -->
+                        <div class="repositories">
+                            <div class="repository_box"> <!-- Repository - Replace with <a> after -->
                                 <div class="repository_title"></div>
                                 <div class="repository_language"></div>
                                 <div class="repository_description"></div>
-                            </a>
+                            </div>
                         </div>
                     </div>
                 </div>
