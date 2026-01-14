@@ -7,7 +7,7 @@
     --secondary-font: "Hubot Sans";
     --tertiary-font: "Montserrat";
 
-    /* Light Theme */
+    /* Dark Theme */
     --primary-color: #7E7F95;
     --secondary-color: #595A6A;
     --tertiary-color: #383947;
@@ -19,10 +19,10 @@
     --accent-color-alt: #ACA771;
     --accent-color-alt2: #807C55;
 
-    --white-color: #FFFFFF;
-    --white-color_alt: #DFDFDF;
-    --white-color_alt-2: #ECECEC;
-    --gray-color: #A4A4A4;
+    --base-color: #FFFFFF;
+    --base-color_alt: #DFDFDF;
+    --base-color_alt-2: #ECECEC;
+    --base-color_alt-3: #A4A4A4;
 
     --background-color: #131317;
     --header-background-color: #0B0B0B;
@@ -30,8 +30,50 @@
     --language-box-outline-color: #464755;
     --language-box-background-color: #333440;
 
-    /* Dark Theme */
-    /* ... */
+    --extra-color-1: #828499;
+    --extra-color-2: #363641;
+    --extra-color-3: #282831;
+    --extra-color-4: #23232a;
+    --extra-color-5: #17171c;
+
+    --filter-invert: invert(100%);
+    --filter-1: invert(34%) sepia(6%) saturate(1065%) hue-rotate(199deg) brightness(97%) contrast(87%);
+    --filter-2: invert(21%) sepia(19%) saturate(552%) hue-rotate(198deg) brightness(88%) contrast(88%);
+    --filter-3: invert(53%) sepia(12%) saturate(497%) hue-rotate(199deg) brightness(92%) contrast(87%);
+    --filter-4: invert(99%) sepia(2%) saturate(688%) hue-rotate(352deg) brightness(112%) contrast(75%);
+    --filter-5: invert(56%) sepia(10%) saturate(631%) hue-rotate(199deg) brightness(89%) contrast(88%);
+    --filter-6: invert(69%) sepia(0%) saturate(227%) hue-rotate(139deg) brightness(96%) contrast(87%);
+
+    /* Light Theme */
+    [data-theme="light"] {
+        --primary-color: #24292F;
+        --secondary-color: #57606A;
+        --tertiary-color: #6E7781;
+        --quaternary-color: #8C959F;
+        --quinary-color: #AFB8C1;
+        --senary-color: #D0D7DE;
+
+        --accent-color: #FFF8AA;        /* keep highlight */
+        --accent-color-alt: #E6DB7A;
+        --accent-color-alt2: #C9BE55;
+
+        --base-color: #FFFFFF;
+        --base-color_alt: #F6F8FA;
+        --base-color_alt-2: #EAEEF2;
+        --base-color_alt-3: #8C959F;
+
+        --background-color: #F6F8FA;
+        --header-background-color: #FFFFFF;
+
+        --language-box-outline-color: #D0D7DE;
+        --language-box-background-color: #FFFFFF;
+
+        --extra-color-1: #6E7781;
+        --extra-color-2: #D8DEE4;
+        --extra-color-3: #EAEEF2;
+        --extra-color-4: #F6F8FA;
+        --extra-color-5: #FFFFFF;
+    }
 
     /* Gaps */
     --gap-1: 6px;
@@ -91,6 +133,7 @@ a {
     height: 10.5vh;
     background-color: var(--header-background-color);
     box-shadow: 0 1px 0 var(--tertiary-color);
+    user-select: none;
 }
 
 /* Header -- Box, Text and Text Tip */
@@ -109,31 +152,48 @@ a {
     padding: 0.47em;
     border: 1px solid var(--tertiary-color);
     border-radius: 10px;
+    transition: 0.5s ease;
 }
 
 .header_box-image {
     height: 21px;
-    filter: invert(34%) sepia(6%) saturate(1065%) hue-rotate(199deg) brightness(97%) contrast(87%);
+    filter: var(--filter-1);
 }
 
 .header-text {
     font-family: var(--secondary-font), sans-serif;
+    color: var(--base-color);
 }
 
-.text-tip {
-    display: none;
+.tool-tip {
+    display: flex;
     position: absolute;
-    top: 110%;
+    opacity: 0;
+    top: 120%;
     padding: 0.3em 0.8em;
     width: auto;
     height: auto;
     text-wrap: nowrap;
-    color: #828499;
+    color: var(--extra-color-1);
     background-color: var(--tertiary-color);
     border-radius: 8px;
     font-family: var(--primary-font), sans-serif;
     font-weight: 500;
     z-index: 1;
+    transition: 0.5s ease;
+    pointer-events: none;
+}
+
+.left {
+    left: 0;
+}
+
+.header_box:hover {
+    background-color: rgba(56, 57, 71, 0.34);
+}
+
+.header_box:hover span {
+    opacity: 1;
 }
 
 /* Header -- Upper */
@@ -162,7 +222,7 @@ a {
 
 #profile-viewer_logo {
     height: 36px;
-    filter: invert(100%);
+    filter: var(--filter-invert);
 }
 
 /* Header --- Repository Path */
@@ -193,11 +253,18 @@ a {
     align-items: center;
     justify-content: center;
     padding: 0.35em 0.8em;
+    font-family: var(--secondary-font), sans-serif;
     color: var(--secondary-color);
     border: 1px solid var(--tertiary-color);
     border-radius: 10px;
     gap: 14px;
     font-weight: 500;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.header_warning:hover {
+    background-color: rgba(56, 57, 71, 0.34);
 }
 
 #my-profile_logo {
@@ -224,6 +291,11 @@ a {
     white-space: nowrap;
     height: 70%;
     gap: 8px;
+    transition: 0.5s ease;
+}
+
+.repository-section:hover {
+    filter: brightness(125%);
 }
 
 .main-section {
@@ -242,6 +314,7 @@ a {
 }
 
 #main-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -253,6 +326,7 @@ a {
 
 .information_panel {
     height: 14%;
+    user-select: none;
 }
 
 .information_upper {
@@ -277,7 +351,8 @@ a {
     padding: 0.125em 0.625em;
     font-family: var(--secondary-font), sans-serif;
     font-size: 0.95rem;
-    color: var(--white-color);
+    color: var(--base-color);
+    cursor: pointer;
 }
 
 .main-branch {
@@ -294,7 +369,7 @@ a {
 .information_box-image {
     display: block;
     height: 24px;
-    filter: invert(21%) sepia(19%) saturate(552%) hue-rotate(198deg) brightness(88%) contrast(88%);
+    filter: var(--filter-2);
 }
 
 #information_profile {
@@ -303,6 +378,7 @@ a {
 }
 
 .information_text {
+    color: var(--base-color);
     font-family: var(--secondary-font), sans-serif;
     font-size: 1.2rem;
 }
@@ -314,6 +390,7 @@ a {
     border: 1px solid var(--primary-color);
     border-radius: 25px;
     padding: 0.135em 0.75em;
+    cursor: pointer;
 }
 
 /* Main - Search Bar */
@@ -336,12 +413,12 @@ a {
 }
 
 .search-bar:has(input:focus) img {
-    filter: invert(100%);
+    filter: var(--filter-invert);
 }
 
 .search-bar_image {
     height: 24px;
-    filter: invert(21%) sepia(19%) saturate(552%) hue-rotate(198deg) brightness(88%) contrast(88%);
+    filter: var(--filter-2);
     transition: 0.3s ease;
 }
 
@@ -351,7 +428,7 @@ a {
     font-family: var(--primary-font), sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
-    color: var(--white-color);
+    color: var(--base-color);
 }
 
 .placeholder {
@@ -397,7 +474,7 @@ a {
 
 .loading_image {
     height: 120px;
-    filter: invert(53%) sepia(12%) saturate(497%) hue-rotate(199deg) brightness(92%) contrast(87%);
+    filter: var(--filter-3);
     animation-name: spinning;
     animation-duration: 0.9s;
     animation-iteration-count: infinite;
@@ -466,10 +543,15 @@ a {
     background-color: var(--quaternary-color);
     border: 1px solid var(--tertiary-color);
     border-radius: 8px;
+    transition: 0.5s ease;
+}
+
+#link-profile:hover {
+    filter: brightness(125%);
 }
 
 #link-text {
-    color: var(--white-color_alt);
+    color: var(--base-color_alt);
     font-family: var(--secondary-font), sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
@@ -477,7 +559,7 @@ a {
 
 #link-arrow {
     width: 14px;
-    filter: invert(99%) sepia(2%) saturate(688%) hue-rotate(352deg) brightness(112%) contrast(75%);
+    filter: var(--filter-4);
 }
 
 /* Result -- General Info */
@@ -506,12 +588,13 @@ a {
 .user_image {
     width: 18px;
     height: 18px;
-    filter: invert(56%) sepia(10%) saturate(631%) hue-rotate(199deg) brightness(89%) contrast(88%);
+    filter: var(--filter-5);
 }
 
 /* Result ---- User's Name and Location Fonts */
 
 .result_font-1 {
+    color: var(--base-color);
     font-family: var(--primary-font), sans-serif;
     font-size: 2.15rem;
 }
@@ -523,7 +606,7 @@ a {
 }
 
 .result_font-2A {
-    color: var(--white-color_alt);
+    color: var(--base-color_alt);
     font-size: 1.045rem;
     font-weight: 600;
 }
@@ -536,7 +619,7 @@ a {
 }
 
 .result_font-3A {
-    color: var(--white-color_alt);
+    color: var(--base-color_alt);
     font-size: 1.045rem;
 }
 
@@ -646,7 +729,7 @@ a {
 }
 
 .repository_title {
-    color: var(--white-color_alt);
+    color: var(--base-color_alt);
     font-family: var(--primary-font), sans-serif;
     font-size: 1rem;
     font-weight: 500;
@@ -657,7 +740,7 @@ a {
 }
 
 .repository_description {
-    color: var(--gray-color);
+    color: var(--base-color_alt-3);
     font-family: var(--primary-font), sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
@@ -666,13 +749,80 @@ a {
 
 .repository_language {
     padding: 0.1em 1em;
-    color: var(--white-color_alt);
+    color: var(--base-color_alt);
     font-family: var(--primary-font), sans-serif;
     font-size: 0.8rem;
     font-weight: 800;
     background-color: var(--language-box-background-color);
     border: 2px solid var(--language-box-outline-color);
     border-radius: 10px;
+}
+
+/* Site Info */
+
+.site-info {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    padding: 1.5em;
+    background-color: rgba(28, 28, 34, 0.875);
+    box-shadow: 0 20px 20px var(--extra-color-5), inset 0 1px 1px var(--extra-color-2);
+    inset: 0;
+    margin: auto;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+}
+
+.site-info_title {
+    margin-bottom: 15px;
+    color: var(--base-color_alt);
+    font-family: var(--tertiary-font), sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.site-info_text {
+    text-align: center;
+    height: 75%;
+    margin-bottom: 10px;
+    overflow: scroll;
+    color: var(--base-color_alt-2);
+    font-family: var(--tertiary-font), sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#site-info_close {
+    display: flex;
+    align-items: center;
+    padding: 0.25em 1em;
+    background-color: var(--extra-color-4);
+    border: 2px solid var(--extra-color-3);
+    border-radius: 15px;
+    color: var(--base-color_alt-3);
+    font-family: var(--secondary-font), sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    gap: var(--gap-1);
+    transition: 0.25s ease;
+}
+
+#site-info_close:hover {
+    filter: brightness(110%);
+    transform: translateY(-2px);
+}
+
+#site-info_close:active {
+    transform: translateY(0);
+    opacity: 0.85;
+}
+
+.site-info_image {
+    width: 16px;
+    filter: var(--filter-6);
 }
 
 /* Credits */
@@ -682,6 +832,7 @@ a {
     align-items: center;
     justify-content: center;
     flex: 1;
+    color: var(--base-color_alt);
     font-family: var(--tertiary-font), sans-serif;
     font-size: 0.8rem;
     font-weight: 500;

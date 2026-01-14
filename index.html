@@ -19,19 +19,19 @@
             <div class="header_upper-left">
                 <div class="header_box-wrapper">
                     <button type="button" class="header_box" id="theme-toggle">
-                        <img src="/sun.svg" alt="" class="header_box-image">
+                        <img src="/sun.svg" alt="Sun/Moon Change Theme Icon" class="header_box-image">
+                        <span class="tool-tip left">Change Theme</span>
                     </button>
-                    <span class="text-tip">Lorem ipsum</span>
                 </div>
 
-                <a id="profile-viewer" href="#">
+                <a id="profile-viewer" href="https://gh-profile-viewer-project.vercel.app">
                     <img src="/profile-viewer.png" alt="" id="profile-viewer_logo">
                 </a>
 
                 <div class="repository-path">
-                    <a class="header-text" href="#">guiolivi</a>
+                    <a class="header-text" href="https://github.com/guiolivi" target="_blank">guiolivi</a>
                     <span class="header-text slash">/</span>
-                    <a class="header-text bold" href="#">github-profile-viewer</a>
+                    <a class="header-text bold" href="https://github.com/guiolivi/github-profile-viewer" target="_blank">github-profile-viewer</a>
                 </div>
             </div>
 
@@ -39,38 +39,40 @@
                 <div class="header_box-wrapper">
                     <button type="button" class="header_box" id="random-user">
                         <img src="/dice.svg" alt="" class="header_box-image">
+                        <span class="tool-tip">Random User</span>
                     </button>
-                    <span class="text-tip"></span>
                 </div>
 
                 <div class="header_box-wrapper">
                     <button type="button" class="header_box" id="more-info">
                         <img src="/info.svg" alt="" class="header_box-image">
+                        <span class="tool-tip">Info</span>
                     </button>
-                    <span class="text-tip"></span>
                 </div>
 
                 <div class="header_warning">
                     <img src="/warning.svg" alt="" class="header_box-image">
-                    <span class="header-text">Site heavily inspired on GitHub</span>
+                    <span>Site heavily inspired on GitHub</span>
                 </div>
 
-                <img src="/profile-picture.png" alt="" id="my-profile_logo">
+                <a href="https://github.com/guiolivi" target="_blank" class="header_box-wrapper">
+                    <img src="/profile-picture.png" alt="" id="my-profile_logo">
+                </a>
             </div>
         </div>
 
         <nav id="header_lower">
-            <a class="repository-section main-section" href="#"> <!-- Use border-bottom -->
+            <a class="repository-section main-section" href="https://gh-profile-viewer-project.vercel.app"> <!-- Use border-bottom -->
                 <img src="/view.svg" alt="" class="header_box-image">
                 <span class="header-text">View profile</span>
             </a>
 
-            <a class="repository-section" href="#">
+            <a class="repository-section" href="https://github.com/guiolivi/github-profile-viewer" target="_blank">
                 <img src="/git.svg" alt="" class="header_box-image">
                 <span class="header-text">Open repository</span>
             </a>
 
-            <a class="repository-section" href="#">
+            <a class="repository-section" href="https://github.com/guiolivi" target="_blank">
                 <img src="/person.svg" alt="" class="header_box-image">
                 <span class="header-text">My profile</span>
             </a>
@@ -120,7 +122,7 @@
                         <div class="result_profile-access">
                             <img src="https://picsum.photos/500" alt="" id="profile-picture">
                             <a id="link-profile" href="#">
-                                <span id="link-text">Acessar Perfil</span>
+                                <span id="link-text">Access Profile</span>
                                 <img src="/seta.svg" alt="" id="link-arrow">
                             </a>
                         </div>
@@ -193,6 +195,17 @@
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <section class="site-info">
+                <div class="site-info_title">About this Site</div>
+                <span class="site-info_text">
+                    <!-- Insert text here -->
+                </span>
+                <button id="site-info_close">
+                    <img src="/cross.svg" alt="" class="site-info_image">
+                    Close
+                </button>
             </section>
         </div>
     </main>

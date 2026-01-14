@@ -11,3 +11,5 @@ document.addEventListener("DOMContentLoaded", () => {
 input.addEventListener("input", () => {
     placeholder.style.display = input.value ? "none" : "block";
 })
+
+/* https://api.github.com/search/users?q=${randomLetter}&per_page=30&page=${page} */
