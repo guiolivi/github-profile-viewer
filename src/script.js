@@ -36,11 +36,33 @@ siteInfoClose.addEventListener("click", () => {
     siteInfo.style.pointerEvents = "none";
 })
 
+const userRandom = async () => {
+    let randomLetter = String.fromCharCode(97 + Math.floor(Math.random() * 26));
+    let page = Math.floor(Math.random() * 10) + 1;
+    return axios.get(`https://api.github.com/search/users?q=${randomLetter}&per_page=30&page=${page}`)
+        .then(usr => {
+            const data = usr.data;
+            return data;
+        })
+}
+
+const randomUser = document.querySelector("#random-user");
+
+randomUser.addEventListener("click", () => {
+    userRandom().then(usr => {
+        const random = usr.items;
+        let randomPick = random[Math.floor(Math.random() * random.length)];
+        requestInfo(randomPick.login);
+    })
+})
+
 /* Main Function */
 
 const search = document.querySelector("#search-bar_button");
 const loading = document.querySelector(".loading");
 const error = document.querySelector(".error");
+const errorText = document.querySelector(".error_text");
+const errorImage = document.querySelector(".error_image");
 const result = document.querySelector("#result");
 const resultInfo = document.querySelector("#result_info");
 
@@ -73,6 +95,8 @@ const userInformation = async (username) => {
             const data = usr.data;
             return data;
     })  .catch(err => {
+            if (err.status === 404) {errorText.innerHTML = "User not found"; errorImage.src="/error.svg";}
+            if (err.status === 403) {errorText.innerHTML = "Rate limit exceeded, wait patiently for an hour or less"; errorImage.src="/limite.svg";}
             error.style.display = "flex";
     })  .finally(() => {
         loading.style.display = "none";
@@ -87,8 +111,8 @@ const userRepos = async (username) => {
         })
 }
 
-function requestInfo() {
-    userInformation(input.value).then(usr => {
+function requestInfo(username) {
+    userInformation(username).then(usr => {
         usr ? resultInfo.style.display = "grid" : resultInfo.style.display = "none";
         usr.user_view_type === "public" ? userStatus.innerHTML = "Public" : userStatus.innerHTML = "Private";
         profilePicture.src = usr.avatar_url;
@@ -107,7 +131,7 @@ function requestInfo() {
         repoCount.innerHTML = `${usr.public_repos}`;
     })
 
-    userRepos(input.value).then(usr => {
+    userRepos(username).then(usr => {
         if (usr === null) {} else {
             usr.forEach(repo => {
                 if (repo.description === null) {
@@ -133,13 +157,11 @@ function requestInfo() {
 }
 
 search.addEventListener("click", () => {
-    requestInfo();
+    requestInfo(input.value);
 })
 
 input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
-        requestInfo();
+        requestInfo(input.value);
     }
 })
-
-/* https://api.github.com/search/users?q=${randomLetter}&per_page=30&page=${page} */
