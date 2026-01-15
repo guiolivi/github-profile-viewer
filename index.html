@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css">
     <script type="module" src="src/script.js"></script>
+    <script>
+        let savedTheme = localStorage.getItem("theme") || "dark";
+        document.documentElement.dataset.theme = savedTheme;
+    </script>
     <title>GitHub Profile Viewer</title>
 </head>
 <body>
@@ -19,7 +23,8 @@
             <div class="header_upper-left">
                 <div class="header_box-wrapper">
                     <button type="button" class="header_box" id="theme-toggle">
-                        <img src="/sun.svg" alt="Sun/Moon Change Theme Icon" class="header_box-image">
+                        <img src="/sun.svg" alt="Sun/Moon Change Theme Icon" class="header_box-image dark">
+                        <img src="/moon.svg" alt="Sun/Moon Change Theme Icon" class="header_box-image light">
                         <span class="tool-tip left">Change Theme</span>
                     </button>
                 </div>
@@ -117,14 +122,19 @@
             <section id="result">
                 <div class="loading">
                     <img src="/loading.svg" alt="" class="loading_image">
-                    <div class="loading_text">Carregando...</div>
+                    <div class="loading_text">Loading...</div>
+                </div>
+
+                <div class="error">
+                    <img src="/error.svg" alt="" class="error_image">
+                    <div class="error_text">User not found</div>
                 </div>
 
                 <div id="result_info">
                     <div id="result_data">
                         <div class="result_profile-access">
                             <img src="https://picsum.photos/500" alt="" id="profile-picture">
-                            <a id="link-profile" href="#">
+                            <a id="link-profile" href="#" target="_blank">
                                 <span id="link-text">Access Profile</span>
                                 <img src="/arrow.svg" alt="" id="link-arrow">
                             </a>
@@ -132,13 +142,13 @@
 
                         <div class="result_general-info">
                             <div class="user_name-location">
-                                <span class="result_font-4" id="user_username">@username</span>
+                                <span class="result_font-4" id="user_username"></span>
 
                                 <div class="user_name-location-wrapper">
-                                    <span class="result_font-1" id="user_name">Name</span>
+                                    <span class="result_font-1" id="user_name"></span>
                                     <span class="user_location-wrapper">
                                         <img src="/location.svg" alt="" class="user_image">
-                                        <span class="result_font-3" id="user_location">Unknown Location</span>
+                                        <span class="result_font-3" id="user_location"></span>
                                     </span>
                                 </div>
                             </div>
@@ -146,38 +156,38 @@
                             <div class="user_follows">
                                 <img src="/people.svg" alt="" class="user_image">
                                 <div class="result_font-2"> <!-- Put texts with different styles next or before span, style them by their parent -->
-                                    <span class="result_font-2A" id="user_follower-count">0</span> follower
+                                    <span class="result_font-2A" id="user_follower-count"></span> follower
                                 </div>
 
                                 <span class="result_font-3 slash">/</span>
 
                                 <div class="result_font-2">
-                                    <span class="result_font-2A" id="user_following-count">0</span> following
+                                    <span class="result_font-2A" id="user_following-count"></span> following
                                 </div>
                             </div>
 
                             <div class="user_company-date-repos">
                                 <div class="user_detail result_font-3">
                                     <img src="/company.svg" alt="" class="user_image">
-                                    <span id="user_company">Unknown Company</span>
+                                    <span id="user_company"></span>
                                 </div>
 
                                 <div class="user_detail result_font-3">
                                     <img src="/date.svg" alt="" class="user_image">
-                                    <span class="result_font-3A" id="user_date">01/01/2025</span>
+                                    <span class="result_font-3A" id="user_date"></span>
                                 </div>
 
                                 <div class="user_detail result_font-3">
                                     <img src="/repo.svg" alt="" class="user_image">
                                     <span>
-                                        <span class="result_font-3A" id="user_repos-count">0</span> repositories
+                                        <span class="result_font-3A" id="user_repos-count"></span> repositories
                                     </span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="result_information-tag">
-                            <span id="user_status">Public</span>
+                            <span id="user_status"></span>
                         </div>
                     </div>
 
@@ -188,13 +198,7 @@
                         </div>
 
                         <div class="repositories">
-                            <a class="repository_box" href="#"> <!-- Repository - Replace with <a> after -->
-                                <div class="repository_box-wrapper">
-                                    <div class="repository_title">lorem-ipsum</div>
-                                    <div class="repository_language">Lorem Ipsum</div>
-                                </div>
-                                <div class="repository_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolorum expedita inventore natus nemo nesciunt obcaecati pariatur rerum temporibus voluptatum?</div>
-                            </a>
+
                         </div>
                     </div>
                 </div>

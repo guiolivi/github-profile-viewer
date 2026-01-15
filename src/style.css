@@ -7,7 +7,15 @@
     --secondary-font: "Hubot Sans";
     --tertiary-font: "Montserrat";
 
-    /* Dark Theme */
+    /* Gaps */
+    --gap-1: 6px;
+    --gap-2: 8px;
+    --gap-3: 14px;
+    --gap-4: 17px;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
     --primary-color: #7E7F95;
     --secondary-color: #595A6A;
     --tertiary-color: #383947;
@@ -35,6 +43,7 @@
     --extra-color-3: #282831;
     --extra-color-4: #23232a;
     --extra-color-5: #17171c;
+    --extra-color-6: #1C1C22DF;
 
     --filter-invert: invert(100%);
     --filter-1: invert(34%) sepia(6%) saturate(1065%) hue-rotate(199deg) brightness(97%) contrast(87%);
@@ -43,53 +52,46 @@
     --filter-4: invert(99%) sepia(2%) saturate(688%) hue-rotate(352deg) brightness(112%) contrast(75%);
     --filter-5: invert(56%) sepia(10%) saturate(631%) hue-rotate(199deg) brightness(89%) contrast(88%);
     --filter-6: invert(69%) sepia(0%) saturate(227%) hue-rotate(139deg) brightness(96%) contrast(87%);
+}
 
-    /* Light Theme */
-    [data-theme="light"] {
-        --background-color: #FFFFFF;
-        --header-background-color: #f6f8fa;
+/* Light Theme */
+[data-theme="light"] {
+    --background-color: #FFFFFF;
+    --header-background-color: #f6f8fa;
 
-        --primary-color: #646D77;
-        --secondary-color: #5C6570;
-        --tertiary-color: #747C86;
-        --quaternary-color: #FFFFFF;
-        --quinary-color: #FFFFFF;
-        --senary-color: #FFFFFF;
+    --primary-color: #646D77;
+    --secondary-color: #5C6570;
+    --tertiary-color: #747C86;
+    --quaternary-color: #FFFFFF;
+    --quinary-color: #FFFFFF;
+    --senary-color: #FFFFFF;
 
-        --accent-color: #4E93E4;
-        --accent-color-alt: #2a527e;
-        --accent-color-alt2: #2a527e;
+    --accent-color: #4E93E4;
+    --accent-color-alt: #2a527e;
+    --accent-color-alt2: #2a527e;
 
-        --base-color: #1f2328;
-        --base-color_alt: #202429;
-        --base-color_alt-2: #5C6570;
-        --base-color_alt-3: #747C86;
+    --base-color: #1f2328;
+    --base-color_alt: #202429;
+    --base-color_alt-2: #5C6570;
+    --base-color_alt-3: #747C86;
 
-        --extra-color-1: #D5DDE3;
-        --extra-color-2: #F6F8FA;
-        --extra-color-3: #f6f8fa;
-        --extra-color-4: #FFFFFF;
-        --extra-color-5: #e6e6e6;
+    --extra-color-1: #D5DDE3;
+    --extra-color-2: #F6F8FA;
+    --extra-color-3: #f6f8fa;
+    --extra-color-4: #FFFFFF;
+    --extra-color-5: #e6e6e6;
+    --extra-color-6: #F5F5F5DE;
 
-        --language-box-outline-color: #D5DDE3;
-        --language-box-background-color: #F6F8FA;
+    --language-box-outline-color: #D5DDE3;
+    --language-box-background-color: #F6F8FA;
 
-        --filter-invert: invert(0%);
-        --filter-1: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
-        --filter-2: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
-        --filter-3: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
-        --filter-4: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
-        --filter-5: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
-        --filter-6: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
-    }
-
-    /* Gaps */
-    --gap-1: 6px;
-    --gap-2: 8px;
-    --gap-3: 14px;
-    --gap-4: 17px;
-
-    /* Paddings */
+    --filter-invert: invert(0%);
+    --filter-1: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
+    --filter-2: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
+    --filter-3: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
+    --filter-4: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
+    --filter-5: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
+    --filter-6: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
 }
 
 /* General */
@@ -98,6 +100,7 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    transition: 0.5s ease; !important;
 }
 
 body {
@@ -433,6 +436,7 @@ a {
 #search-bar_button {
     display: flex;
     align-items: center;
+    background: none;
 }
 
 .arrow {
@@ -467,7 +471,7 @@ a {
 /* Result */
 
 #result {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -509,10 +513,34 @@ a {
     to { transform: rotate(360deg); }
 }
 
+/* Result - Error */
+
+.error {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 400px;
+    height: 400px;
+}
+
+.error_image {
+    height: 120px;
+    filter: var(--filter-3);
+}
+
+.error_text {
+    font-family: var(--secondary-font), sans-serif;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
 /* Result - Info */
 
 #result_info {
-    display: grid;
+    display: none;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1.2fr;
     width: 100%;
@@ -663,6 +691,12 @@ a {
     gap: var(--gap-3);
 }
 
+#user_company {
+    height: auto;
+    width: 420px;
+    overflow-wrap: break-word;
+}
+
 .user_detail {
     display: flex;
     align-items: center;
@@ -778,14 +812,16 @@ a {
 /* Site Info */
 
 .site-info {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
+    opacity: 0;
+    pointer-events: none;
     width: 400px;
     height: 350px;
     padding: 1.5em;
-    background-color: rgba(28, 28, 34, 0.875);
+    background-color: var(--extra-color-6);
     box-shadow: 0 20px 20px var(--extra-color-5), inset 0 1px 1px var(--extra-color-2);
     inset: 0;
     margin: auto;
@@ -840,6 +876,29 @@ a {
 .site-info_image {
     width: 16px;
     filter: var(--filter-6);
+}
+
+/* Theme Toggle */
+
+#theme-toggle {
+    position: relative;
+    display: grid;
+}
+
+#theme-toggle img {
+    grid-area: 1 / 1;
+}
+
+.light {
+    opacity: 0;
+}
+
+[data-theme="light"] .light {
+    opacity: 1;
+}
+
+[data-theme="light"] .dark {
+    opacity: 0;
 }
 
 /* Credits */
