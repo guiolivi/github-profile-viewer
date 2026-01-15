@@ -430,6 +430,15 @@ a {
     transition: 0.3s ease;
 }
 
+#search-bar_button {
+    display: flex;
+    align-items: center;
+}
+
+.arrow {
+    height: 20px;
+}
+
 #search-input {
     width: 100%;
     background: none;
