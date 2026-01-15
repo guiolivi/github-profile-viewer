@@ -59,6 +59,6 @@ Because of the GitHub API's rate limit, you can make up to 60 requests per hour.
 <div align="center">
   <h6>Showing the tool's usage</h6>
   
-  <img src="https://res.cloudinary.com/dpdctmtmk/image/upload/v1768480608/screenshot_gh_search_ewgzf5.png" width="800" height="800">
+  <img src="https://res.cloudinary.com/dpdctmtmk/image/upload/v1768483864/screenshot_gh_search_v6q7mo.png" width="800" height="800">
 
 </div>
