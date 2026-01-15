@@ -46,33 +46,41 @@
 
     /* Light Theme */
     [data-theme="light"] {
-        --primary-color: #24292F;
-        --secondary-color: #57606A;
-        --tertiary-color: #6E7781;
-        --quaternary-color: #8C959F;
-        --quinary-color: #AFB8C1;
-        --senary-color: #D0D7DE;
+        --background-color: #FFFFFF;
+        --header-background-color: #f6f8fa;
 
-        --accent-color: #FFF8AA;        /* keep highlight */
-        --accent-color-alt: #E6DB7A;
-        --accent-color-alt2: #C9BE55;
+        --primary-color: #646D77;
+        --secondary-color: #5C6570;
+        --tertiary-color: #747C86;
+        --quaternary-color: #FFFFFF;
+        --quinary-color: #FFFFFF;
+        --senary-color: #FFFFFF;
 
-        --base-color: #FFFFFF;
-        --base-color_alt: #F6F8FA;
-        --base-color_alt-2: #EAEEF2;
-        --base-color_alt-3: #8C959F;
+        --accent-color: #4E93E4;
+        --accent-color-alt: #2a527e;
+        --accent-color-alt2: #2a527e;
 
-        --background-color: #F6F8FA;
-        --header-background-color: #FFFFFF;
+        --base-color: #1f2328;
+        --base-color_alt: #202429;
+        --base-color_alt-2: #5C6570;
+        --base-color_alt-3: #747C86;
 
-        --language-box-outline-color: #D0D7DE;
-        --language-box-background-color: #FFFFFF;
+        --extra-color-1: #D5DDE3;
+        --extra-color-2: #F6F8FA;
+        --extra-color-3: #f6f8fa;
+        --extra-color-4: #FFFFFF;
+        --extra-color-5: #e6e6e6;
 
-        --extra-color-1: #6E7781;
-        --extra-color-2: #D8DEE4;
-        --extra-color-3: #EAEEF2;
-        --extra-color-4: #F6F8FA;
-        --extra-color-5: #FFFFFF;
+        --language-box-outline-color: #D5DDE3;
+        --language-box-background-color: #F6F8FA;
+
+        --filter-invert: invert(0%);
+        --filter-1: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
+        --filter-2: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
+        --filter-3: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
+        --filter-4: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
+        --filter-5: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
+        --filter-6: invert(38%) sepia(24%) saturate(265%) hue-rotate(170deg) brightness(92%) contrast(85%);
     }
 
     /* Gaps */
