@@ -785,7 +785,7 @@ a {
     font-family: var(--primary-font), sans-serif;
     font-size: 1rem;
     font-weight: 500;
-    width: 100px;
+    flex: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1106,6 +1106,10 @@ a {
     }
 
     /* Repositories */
+    .repositories {
+        max-width: 92.825%;
+    }
+
     .repository_box {
         height: auto;
         min-height: 120px;
