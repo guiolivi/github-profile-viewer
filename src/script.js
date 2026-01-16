@@ -113,7 +113,7 @@ const userRepos = async (username) => {
 
 function requestInfo(username) {
     userInformation(username).then(usr => {
-        usr ? resultInfo.style.display = "grid" : resultInfo.style.display = "none";
+        usr ? resultInfo.style.display = "flex" : resultInfo.style.display = "none";
         usr.user_view_type === "public" ? userStatus.innerHTML = "Public" : userStatus.innerHTML = "Private";
         profilePicture.src = usr.avatar_url;
         linkProfile.href = usr.html_url;

@@ -542,8 +542,7 @@ a {
 
 #result_info {
     display: none;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1.2fr;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     padding: 1.95em 2.25em;
@@ -554,7 +553,6 @@ a {
 #result_data {
     display: flex;
     flex-direction: row;
-    grid-area: 1 / 1 / 2 / 2;
 }
 
 .result_profile-access {
@@ -623,12 +621,12 @@ a {
     display: flex;
     align-items: center;
     gap: inherit;
-    flex: 2;
+    flex: 1;
 }
 
 #user_name {
     margin-right: 5px;
-    flex: 0.5;
+    flex: 0 0 auto;
 }
 
 .user_image {
@@ -728,7 +726,6 @@ a {
 .user_repositories {
     display: flex;
     flex-direction: column;
-    grid-area: 2 / 1 / 3 / 2;
 }
 
 /* Result -- Repositories Title */
@@ -768,6 +765,7 @@ a {
     flex-direction: column;
     padding: 0.85em;
     height: 120px;
+    width: 366px;
     gap: var(--gap-2);
     background-color: var(--senary-color);
     border: 1px solid var(--tertiary-color);
@@ -915,6 +913,13 @@ a {
     font-weight: 500;
 }
 
+/* Extra media query */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .repositories {
+        height: 372px;
+    }
+}
+
 /* Large tablets and small desktops (992px - 1199px) */
 @media (max-width: 1199px) {
     #main-wrapper {
@@ -924,11 +929,14 @@ a {
     .user_detail#user_company {
         width: 350px;
     }
+
+    .repository_box {
+        width: auto;
+    }
 }
 
 /* Tablets and large phones (768px - 991px) */
 @media (max-width: 991px) {
-    /* Header */
     #header {
         height: auto;
         min-height: 10.5vh;
@@ -942,10 +950,17 @@ a {
         display: none;
     }
 
-    /* Main */
     #result_data {
         flex-direction: column;
         gap: 25px;
+    }
+
+    #result_info {
+        padding: 1.2em 1em 30.5%;
+    }
+
+    .result_profile-access {
+        align-items: center;
     }
 
     .result_general-info {
@@ -955,7 +970,7 @@ a {
     .result_information-tag {
         align-items: flex-start;
         justify-content: center;
-        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     .user_detail#user_company {
@@ -963,12 +978,18 @@ a {
         max-width: 400px;
     }
 
-    /* Repositories */
+    #credits {
+        margin-top: -40px;
+    }
+
     .repositories {
         grid-template-columns: 1fr;
     }
 
-    /* Site info */
+    .repository_box {
+        width: auto;
+    }
+
     .site-info {
         width: 90%;
         max-width: 400px;
@@ -977,7 +998,6 @@ a {
 
 /* Small tablets and large phones (576px - 767px) */
 @media (max-width: 767px) {
-    /* Header */
     #header_upper {
         flex-direction: row;
         height: auto;
@@ -994,7 +1014,6 @@ a {
         height: auto;
     }
 
-    /* Main */
     .information_upper {
         flex-wrap: wrap;
         justify-content: center;
@@ -1012,7 +1031,7 @@ a {
 
     .placeholder {
         font-size: 1rem;
-        left: 2.5em;
+        left: 3.25em;
     }
 
     #result_info {
@@ -1045,11 +1064,18 @@ a {
     .user_repositories-text {
         font-size: 1.1rem;
     }
+
+    .repositories {
+        grid-template-columns: 1fr;
+    }
+
+    .repository_box {
+        width: auto;
+    }
 }
 
 /* Mobile phones (480px - 575px) */
 @media (max-width: 575px) {
-    /* Header */
     .header_upper-right {
         gap: 5px;
     }
@@ -1058,7 +1084,6 @@ a {
         height: 24px;
     }
 
-    /* Typography */
     .result_font-1 {
         font-size: 1.8rem;
     }
@@ -1073,23 +1098,21 @@ a {
         font-size: 0.9rem;
     }
 
-    /* Search bar */
     .search-bar {
         margin: 15px 0 20px 0;
     }
 
     .placeholder {
         font-size: 0.9rem;
-        left: 2.3em;
+        left: 3.6em;
     }
 
     #search-input {
         font-size: 1rem;
     }
 
-    /* Result section */
     #result_info {
-        padding: 1.2em 1em;
+        padding: 1.2em 1em 53.75%;
     }
 
     #profile-picture {
@@ -1105,11 +1128,6 @@ a {
         font-size: 1rem;
     }
 
-    /* Repositories */
-    .repositories {
-        max-width: 92.825%;
-    }
-
     .repository_box {
         height: auto;
         min-height: 120px;
@@ -1119,7 +1137,6 @@ a {
         width: 100%;
     }
 
-    /* Site info */
     .site-info {
         width: 95%;
         max-height: 80vh;
@@ -1137,7 +1154,10 @@ a {
 
 /* Small mobile phones (320px - 479px) */
 @media (max-width: 479px) {
-    /* Header */
+    #header {
+        min-height: 11.5vh;
+    }
+
     .header_box {
         padding: 0.35em;
     }
@@ -1156,14 +1176,13 @@ a {
 
     .repository-section {
         padding: 6px 8px;
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 
     .repository-section img {
         height: 16px;
     }
 
-    /* Content adjustments */
     .information_text {
         font-size: 1rem;
     }
@@ -1177,6 +1196,14 @@ a {
         height: 120px;
     }
 
+    #result_info {
+        padding: 1.2em 1em 60.75%;
+    }
+
+    #credits {
+        margin-top: -40px;
+    }
+
     .result_font-1 {
         font-size: 1.6rem;
     }
@@ -1185,7 +1212,6 @@ a {
         gap: 4px;
     }
 
-    /* Repositories */
     .repository_box-wrapper {
         flex-direction: column;
         gap: 8px;
@@ -1195,7 +1221,6 @@ a {
         align-self: flex-start;
     }
 
-    /* Loading and error states */
     .loading,
     .error {
         width: 300px;
